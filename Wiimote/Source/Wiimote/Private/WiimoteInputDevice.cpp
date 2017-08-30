@@ -285,7 +285,7 @@ void FWiimoteInputDevice::SetChannelValues(int32 ControllerId, const FForceFeedb
 
 void FWiimoteInputDevice::handle_event(struct wiimote_t* wm, int id)
 {
-    UE_LOG(LogWiimote, Log, TEXT("\n\n--- EVENT [id %i] ---"), wm->unid);
+   // UE_LOG(LogWiimote, Log, TEXT("\n\n--- EVENT [id %i] ---"), wm->unid);
 
     CurrentStates[0] = IS_PRESSED(wm, WIIMOTE_BUTTON_A) || IS_HELD(wm, WIIMOTE_BUTTON_A);
     CurrentStates[1] = IS_PRESSED(wm, WIIMOTE_BUTTON_B) || IS_HELD(wm, WIIMOTE_BUTTON_B);
@@ -341,21 +341,21 @@ void FWiimoteInputDevice::handle_event(struct wiimote_t* wm, int id)
     *
     *   Also make sure that we see at least 1 dot.
     */
-    if (WIIUSE_USING_IR(wm))
-    {
+   // if (WIIUSE_USING_IR(wm))
+    //{
         /* go through each of the 4 possible IR sources */
-        for (int i = 0; i < 4; ++i)
-        {
+     //   for (int i = 0; i < 4; ++i)
+     //   {
             /* check if the source is visible */
-            if (wm->ir.dot[i].visible)
-            {
-                UE_LOG(LogWiimote, Log, TEXT("IR source %i: (%u, %u)"), i, wm->ir.dot[i].x, wm->ir.dot[i].y);
-            }
-        }
+      //      if (wm->ir.dot[i].visible)
+      //      {
+               // UE_LOG(LogWiimote, Log, TEXT("IR source %i: (%u, %u)"), i, wm->ir.dot[i].x, wm->ir.dot[i].y);
+       //     }
+       // }
 
-        UE_LOG(LogWiimote, Log, TEXT("IR cursor: (%u, %u)"), wm->ir.x, wm->ir.y);
-        UE_LOG(LogWiimote, Log, TEXT("IR z distance: %f"), wm->ir.z);
-    }
+       // UE_LOG(LogWiimote, Log, TEXT("IR cursor: (%u, %u)"), wm->ir.x, wm->ir.y);
+       // UE_LOG(LogWiimote, Log, TEXT("IR z distance: %f"), wm->ir.z);
+   // }
     // Update motion controls.
     FVector Tilt(0, 0, 0);
     FVector RotationRate(0, 0, 0);
