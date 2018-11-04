@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Wiimote.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Unreal Projects\cppbuilder\Intermediate\Build\Win64\cppbuilderEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\Unreal Projects\cppbuilder\Plugins\Wiimote\Intermediate\Build\Win64\UE4Editor\Development\Wiimote\Module.Wiimote.cpp.obj"
+"D:\Unreal Projects\cppbuilder\Plugins\Wiimote\Intermediate\Build\Win64\UE4Editor\Development\Wiimote\Module.Wiimote.gen.cpp.obj"
+"D:\Unreal Projects\cppbuilder\Plugins\Wiimote\Intermediate\Build\Win64\UE4Editor\Development\Wiimote\PCLaunch.rc.res"
+/OUT:"D:\Unreal Projects\cppbuilder\Plugins\Wiimote\Intermediate\Build\Win64\UE4Editor\Development\Wiimote\UE4Editor-Wiimote.lib"

@@ -1,12 +1,103 @@
-﻿Log file open, 07/08/17 13:44:00
-LogInit:Display: Running engine for game: UE4WiiMoteTest
+﻿Log file open, 11/04/18 17:18:54
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VSPerf140.dll' (GetLastError=126)
+LogWindows: File 'VSPerf140.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogInit: Display: Running engine for game: UE4WiiMoteTest
 LogPlatformFile: Not using cached read wrapper
-LogInit:Display: RandInit(597804231) SRandInit(597804231).
-LogTaskGraph: Started task graph with 5 named threads and 8 total threads with 1 sets of task threads.
-LogStats: Stats thread started at 0.062422
-LogInit: Using libcurl 7.47.1
+LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.313464
+LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
+LogICUInternationalization: Display: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin AISupport
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MacGraphicsSwitching
+LogPluginManager: Mounting plugin MeshEditor
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin AppleImageUtils
+LogPluginManager: Mounting plugin AppleVision
+LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin GeometryCache
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin ProxyLODPlugin
+LogPluginManager: Mounting plugin MagicLeap
+LogPluginManager: Mounting plugin MagicLeapEmulator
+LogPluginManager: Mounting plugin MagicLeapMedia
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin LinearTimecode
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin LauncherChunkInstaller
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin EditableMesh
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin ImmediatePhysics
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Plugin shader directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders found
+LogPluginManager: Mapping shader source directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders to virtual directory /Plugin/OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogPluginManager: Mounting plugin Wiimote
+LogStreaming: Display: Took  0.088s to configure plugins.
+LogInit: Using libcurl 7.55.1-DEV
 LogInit:  - built for x86_64-pc-win32
-LogInit:  - supports SSL with OpenSSL/1.0.2g
+LogInit:  - supports SSL with OpenSSL/1.0.2h
 LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
 LogInit:  - other features:
 LogInit:      CURL_VERSION_SSL
@@ -20,199 +111,124 @@ LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
 LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
 LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
 LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
-LogInit: Build: ++UE4+Release-4.15-CL-3450819
-LogInit: Engine Version: 4.15.3-3450819+++UE4+Release-4.15
-LogInit: Compatible Engine Version: 4.15.0-3299760+++UE4+Release-4.15
-LogInit: Net CL: 3299760
-LogDevObjectVersion: Number of dev versions registered: 14
-LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 8
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogInit: Build: ++UE4+Release-4.20-CL-4369336
+LogInit: Engine Version: 4.20.3-4369336+++UE4+Release-4.20
+LogInit: Compatible Engine Version: 4.20.0-4212847+++UE4+Release-4.20
+LogInit: Net CL: 4212847
+LogInit: OS: Windows 10 (), CPU: Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz, GPU: Intel(R) HD Graphics 4600
+LogInit: Compiled (64-bit): Sep 17 2018 12:26:19
+LogInit: Compiled with Visual C++: 19.13.26129.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.20
+LogInit: Command Line:  /Game/FirstPersonBP/Maps/FirstPersonExampleMap -game -PIEVIACONSOLE -ResX=1280 -ResY=720  -Multiprocess -messaging -SessionName="Play in Standalone Game" -featureleveles2 -faketouches -windowed 
+LogInit: Base Directory: C:/Program Files/Epic Games/UE_4.20/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 20
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
 LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
 LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
-LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 14
-LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 22
-LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 0
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 24
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 34
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
 LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
 LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
 LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
 LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
-LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 12
-LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 3
-LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 26
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 9
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 2
 LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
-LogInit: Compiled (64-bit): May 21 2017 11:02:34
-LogInit: Compiled with Visual C++: 19.00.23026.00
-LogInit: Build Configuration: Development
-LogInit: Branch Name: ++UE4+Release-4.15
-LogInit: Command line:  
-LogInit: Base directory: D:/Program Files/Epic Games/UE_4.15/Engine/Binaries/Win64/
-LogInit: Installed Engine Build: 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 12
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 1
+LogStreaming: Display: Took  0.004s to delete old logs.
 LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
 LogInit: Object subsystem initialized
-[2017.07.08-11.44.01:470][  0]LogInit: Selected Device Profile: [Windows]
-[2017.07.08-11.44.01:470][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
-[2017.07.08-11.44.01:477][  0]LogInit: Computer: TONIMASTERRACE
-[2017.07.08-11.44.01:477][  0]LogInit: User: Toni
-[2017.07.08-11.44.01:477][  0]LogInit: CPU Page size=65536, Cores=4
-[2017.07.08-11.44.01:477][  0]LogInit: High frequency timer resolution =3.421880 MHz
-[2017.07.08-11.44.01:478][  0]LogMemory: Memory total: Physical=16.0GB (16GB approx)
-[2017.07.08-11.44.01:478][  0]LogMemory: Platform Memory Stats for Windows
-[2017.07.08-11.44.01:478][  0]LogMemory: Process Physical Memory: 263.26 MB used, 263.26 MB peak
-[2017.07.08-11.44.01:478][  0]LogMemory: Process Virtual Memory: 262.16 MB used, 262.16 MB peak
-[2017.07.08-11.44.01:478][  0]LogMemory: Physical Memory: 7254.75 MB used,  9082.69 MB free, 16337.44 MB total
-[2017.07.08-11.44.01:478][  0]LogMemory: Virtual Memory: 644.23 MB used,  9082.69 MB free, 134217728.00 MB total
-[2017.07.08-11.44.01:523][  0]LogInit: Overriding culture en with editor configuration.
-[2017.07.08-11.44.01:934][  0]LogD3D11RHI: D3D11 adapters:
-[2017.07.08-11.44.02:380][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1070' (Feature Level 11_0)
-[2017.07.08-11.44.02:380][  0]LogD3D11RHI:       8119/0/8168 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
-[2017.07.08-11.44.02:381][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
-[2017.07.08-11.44.02:381][  0]LogD3D11RHI:       0/0/8168 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
-[2017.07.08-11.44.02:381][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
-[2017.07.08-11.44.02:386][  0]LogD3D11RHI: Creating new Direct3DDevice
-[2017.07.08-11.44.02:386][  0]LogD3D11RHI:     GPU DeviceId: 0x1b81 (for the marketing name, search the web for "GPU Device Id")
-[2017.07.08-11.44.02:386][  0]LogWindows: EnumDisplayDevices:
-[2017.07.08-11.44.02:386][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1070' (P:1 D:1)
-[2017.07.08-11.44.02:386][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
-[2017.07.08-11.44.02:386][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
-[2017.07.08-11.44.02:386][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
-[2017.07.08-11.44.02:386][  0]LogWindows: DebugString: FoundDriverCount:4 
-[2017.07.08-11.44.02:386][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1070
-[2017.07.08-11.44.02:386][  0]LogD3D11RHI:   Driver Version: 382.53 (internal:22.21.13.8253, unified:382.53)
-[2017.07.08-11.44.02:386][  0]LogD3D11RHI:      Driver Date: 6-7-2017
-[2017.07.08-11.44.02:386][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
-[2017.07.08-11.44.02:831][  0]LogD3D11RHI: Async texture creation enabled
-[2017.07.08-11.44.02:851][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
-[2017.07.08-11.44.02:899][  0]LogShaderCompilers: Guid format shader working directory is -3 characters bigger than the processId version (../../../../../../Unreal Projects/UE4WiiMoteTest/Intermediate/Shaders/WorkingDirectory/9752/).
-[2017.07.08-11.44.02:899][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/Toni/AppData/Local/Temp/UnrealShaderWorkingDir/4A9A7A5C40065C83BFDE36B637B4BDFA/'.
-[2017.07.08-11.44.02:899][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
-[2017.07.08-11.44.03:561][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
-[2017.07.08-11.44.03:590][  0]LogTemp:Display: Loaded TP MacClientTargetPlatform
-[2017.07.08-11.44.03:618][  0]LogTemp:Display: Loaded TP MacNoEditorTargetPlatform
-[2017.07.08-11.44.03:646][  0]LogTemp:Display: Loaded TP MacServerTargetPlatform
-[2017.07.08-11.44.03:675][  0]LogTemp:Display: Loaded TP MacTargetPlatform
-[2017.07.08-11.44.03:703][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
-[2017.07.08-11.44.03:732][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
-[2017.07.08-11.44.03:760][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
-[2017.07.08-11.44.03:782][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
-[2017.07.08-11.44.03:810][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
-[2017.07.08-11.44.03:838][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
-[2017.07.08-11.44.03:865][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
-[2017.07.08-11.44.03:893][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
-[2017.07.08-11.44.03:921][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
-[2017.07.08-11.44.03:949][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
-[2017.07.08-11.44.04:005][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
-[2017.07.08-11.44.04:005][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
-[2017.07.08-11.44.04:022][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
-[2017.07.08-11.44.04:081][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
-[2017.07.08-11.44.04:101][  0]LogTemp:Display: Loaded TP TVOSTargetPlatform
-[2017.07.08-11.44.04:130][  0]LogTemp:Display: Loaded TP LinuxClientTargetPlatform
-[2017.07.08-11.44.04:158][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
-[2017.07.08-11.44.04:186][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
-[2017.07.08-11.44.04:217][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
-[2017.07.08-11.44.04:217][  0]LogTargetPlatformManager:Display: Building Assets For Windows
-[2017.07.08-11.44.04:440][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
-[2017.07.08-11.44.04:476][  0]LogDerivedDataCache: Loaded boot cache 0.04s 50MB C:/Users/Toni/AppData/Local/UnrealEngine/4.15/DerivedDataCache/Boot.ddc.
-[2017.07.08-11.44.04:476][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Toni/AppData/Local/UnrealEngine/4.15/DerivedDataCache/Boot.ddc
-[2017.07.08-11.44.04:477][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Unreal Projects/UE4WiiMoteTest/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
-[2017.07.08-11.44.04:477][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
-[2017.07.08-11.44.04:477][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Unreal Projects/UE4WiiMoteTest/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
-[2017.07.08-11.44.04:477][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
-[2017.07.08-11.44.04:489][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
-[2017.07.08-11.44.04:500][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Toni/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
-[2017.07.08-11.44.04:507][  0]LogSlate: Using Freetype 2.6.0
-[2017.07.08-11.44.04:507][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
-[2017.07.08-11.44.04:507][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
-[2017.07.08-11.44.04:680][  0]LogInit: Selected Device Profile: [Windows]
-[2017.07.08-11.44.04:681][  0]LogContentStreaming: Texture pool size is 0.00 MB
-[2017.07.08-11.44.04:813][  0]LogMeshUtilities: Using QuadricMeshReduction for automatic static mesh reduction
-[2017.07.08-11.44.04:834][  0]LogSimplygon: Simplygon DLL not present - disabling.
-[2017.07.08-11.44.04:857][  0]LogMeshUtilities: Using SimplygonSwarm for distributed automatic mesh merging
-[2017.07.08-11.44.04:857][  0]LogMeshUtilities: No automatic skeletal mesh reduction module available
-[2017.07.08-11.44.04:857][  0]LogMeshUtilities: No automatic mesh merging module available
-[2017.07.08-11.44.05:218][  0]LogNetVersion: GetLocalNetworkVersion: CL: 3299760, ProjectName: ue4wiimotetest, ProjectVersion: , EngineNetworkVersion: 2, GameNetworkVersion: 0, NetworkChecksum: 1721051133
-[2017.07.08-11.44.05:252][  0]LogAssetRegistry: FAssetRegistry took 0.0212 seconds to start up
-[2017.07.08-11.44.05:271][  0]LogPackageLocalizationCache: Processed 3 localized package path(s) for 1 prioritized culture(s) in 0.007454 seconds
-[2017.07.08-11.44.05:275][  0]LogUObjectArray: 32493 objects as part of root set at end of initial load.
-[2017.07.08-11.44.05:275][  0]LogUObjectAllocator: 7077024 out of 0 bytes used by permanent object pool.
-[2017.07.08-11.44.05:275][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
-[2017.07.08-11.44.05:306][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
-[2017.07.08-11.44.06:165][  0]LogTcpMessaging: Initializing TcpMessaging bridge
-[2017.07.08-11.44.06:190][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
-[2017.07.08-11.44.06:435][  0]LogMaterial: Uniform references updated for custom material expression Custom.
-[2017.07.08-11.44.06:624][  0]SourceControl: Info Source control is disabled
-[2017.07.08-11.44.06:625][  0]SourceControl: Info Source control is disabled
-[2017.07.08-11.44.06:646][  0]SourceControl: Info Source control is disabled
-[2017.07.08-11.44.06:667][  0]SourceControl: Info Source control is disabled
-[2017.07.08-11.44.07:272][  0]LogEngine: Initializing Engine...
-[2017.07.08-11.44.07:272][  0]LogHMD: Failed to initialize OpenVR with code 101
-[2017.07.08-11.44.07:345][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
-[2017.07.08-11.44.07:345][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
-[2017.07.08-11.44.07:402][  0]LogAIModule: Creating AISystem for world Untitled
-[2017.07.08-11.44.07:407][  0]LogInit: XAudio2 using 'BenQ GL2250H-4 (NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
-[2017.07.08-11.44.07:415][  0]LogInit: FAudioDevice initialized.
-[2017.07.08-11.44.07:432][  0]LogDerivedDataCache: Saved boot cache 0.02s 50MB C:/Users/Toni/AppData/Local/UnrealEngine/4.15/DerivedDataCache/Boot.ddc.
-[2017.07.08-11.44.07:438][  0]LogInit: Texture streaming: Enabled
-[2017.07.08-11.44.07:488][  0]LogEngineSessionManager: EngineSessionManager initialized
-[2017.07.08-11.44.07:535][  0]LogInit: Transaction tracking system initialized
-[2017.07.08-11.44.07:718][  0]BlueprintLog: New page: Editor Load
-[2017.07.08-11.44.08:139][  0]LocalizationService: Info Localization service is disabled
-[2017.07.08-11.44.08:627][  0]LogConsoleResponse:Display: 
-[2017.07.08-11.44.08:707][  0]LogCook:Display: Max memory allowance for cook 16384mb min free memory 0mb
-[2017.07.08-11.44.08:707][  0]LogCook:Display: Mobile HDR setting 1
-[2017.07.08-11.44.09:184][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Projects/UE4WiiMoteTest/Content/' took 0.01s
-[2017.07.08-11.44.09:184][  0]SourceControl: Info Source control is disabled
-[2017.07.08-11.44.09:184][  0]Cmd: MAP LOAD FILE="../../../../../../Unreal Projects/UE4WiiMoteTest/Content/FirstPersonBP/Maps/FirstPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
-[2017.07.08-11.44.09:184][  0]LightingResults: New page: Lighting Build
-[2017.07.08-11.44.09:203][  0]MapCheck: New page: Map Check
-[2017.07.08-11.44.09:203][  0]LightingResults: New page: Lighting Build
-[2017.07.08-11.44.09:522][  0]LogAIModule: Creating AISystem for world FirstPersonExampleMap
-[2017.07.08-11.44.09:540][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
-[2017.07.08-11.44.09:540][  0]Cmd: MAP CHECKDEP NOCLEARLOG
-[2017.07.08-11.44.09:562][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 21.962ms to complete.
-[2017.07.08-11.44.09:562][  0]LogFileHelpers: Loading map 'FirstPersonExampleMap' took 0.378
-[2017.07.08-11.44.09:690][  0]LogCollectionManager: Loaded 0 collections in 0.000601 seconds
-[2017.07.08-11.44.09:745][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Projects/UE4WiiMoteTest/Saved/Collections/' took 0.01s
-[2017.07.08-11.44.09:745][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Projects/UE4WiiMoteTest/Content/Developers/Toni/Collections/' took 0.01s
-[2017.07.08-11.44.09:745][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Projects/UE4WiiMoteTest/Content/Collections/' took 0.01s
-[2017.07.08-11.44.09:745][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000001 seconds
-[2017.07.08-11.44.09:752][  0]LogContentBrowser: Native class hierarchy populated in 0.0061 seconds. Added 2246 classes and 456 folders.
-[2017.07.08-11.44.09:784][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0004 seconds. Added 0 classes and 0 folders.
-[2017.07.08-11.44.09:805][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0003 seconds. Added 0 classes and 0 folders.
-[2017.07.08-11.44.09:827][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0003 seconds. Added 1 classes and 2 folders.
-[2017.07.08-11.44.09:856][  0]LogCrashTracker: Crashtracker disabled due to settings.
-[2017.07.08-11.44.09:873][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
-[2017.07.08-11.44.09:917][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0006 seconds. Added 1 classes and 2 folders.
-[2017.07.08-11.44.09:917][  0]LogLoad: (Engine Initialization) Total time: 9.56 seconds
-[2017.07.08-11.44.09:917][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.12 seconds
-[2017.07.08-11.44.09:917][  0]LogExternalProfiler: Found external profiler: VSPerf
-[2017.07.08-11.44.09:917][  0]LogExternalProfiler: Using external profiler: VSPerf
-[2017.07.08-11.44.10:486][  0]LogCrashTracker: 
-
-
-[2017.07.08-11.44.10:486][  0]LogCrashTracker: 
-
-
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: === Critical error: ===
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: 
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: Fatal error!
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: 
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: Unhandled Exception: 0xc06d007e
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: 
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: KERNELBASE.dll!0x00000000BDB79E08
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor-Wiimote.dll!__delayLoadHelper2() [f:\dd\vctools\delayimp\delayhlp.cpp:323]
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor-Wiimote.dll!_tailMerge_wiiuse_dll()
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor-Wiimote.dll!FWiimoteInputDevice::FWiimoteInputDevice() [d:\unreal projects\cbuilder\plugins\wiimote\source\wiimote\private\wiimoteinputdevice.cpp:36]
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor-Wiimote.dll!FWiimotePlugin::CreateInputDevice() [d:\unreal projects\cbuilder\plugins\wiimote\source\wiimote\private\wiimoteplugin.cpp:8]
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor-Core.dll!0x000000007A80B629
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor-Slate.dll!0x0000000074E388A4
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor.exe!0x00000000DF0FDD75
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor.exe!0x00000000DF0EEB40
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor.exe!0x00000000DF0EEBBA
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor.exe!0x00000000DF100A29
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: UE4Editor.exe!0x00000000DF1022B6
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: KERNEL32.DLL!0x00000000BE322774
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: ntdll.dll!0x00000000C0AA0D61
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: ntdll.dll!0x00000000C0AA0D61
-[2017.07.08-11.44.10:486][  0]LogWindows:Error: 
-[2017.07.08-11.44.10:504][  0]LogExit: Executing StaticShutdownAfterError
-[2017.07.08-11.44.10:505][  0]LogWindows: FPlatformMisc::RequestExit(1)
-[2017.07.08-11.44.10:505][  0]Log file closed, 07/08/17 13:44:10
+[2018.11.04-16.18.54:538][  0]LogInit: Selected Device Profile: [Windows]
+[2018.11.04-16.18.54:538][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2018.11.04-16.18.54:543][  0]LogHAL: Display: Platform has ~ 8 GB [8505683968 / 8589934592 / 8], which maps to Default [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2018.11.04-16.18.54:543][  0]LogInit: Setting Device Profile CVar: [[r.Vulkan.UseRealUBs:1]]
+[2018.11.04-16.18.54:543][  0]LogInit: Going up to parent DeviceProfile []
+[2018.11.04-16.18.54:543][  0]LogInit: Computer: DESKTOP-S0H38PK
+[2018.11.04-16.18.54:543][  0]LogInit: User: tonir
+[2018.11.04-16.18.54:543][  0]LogInit: CPU Page size=4096, Cores=4
+[2018.11.04-16.18.54:543][  0]LogInit: High frequency timer resolution =2.338351 MHz
+[2018.11.04-16.18.54:543][  0]LogMemory: Memory total: Physical=7.9GB (8GB approx)
+[2018.11.04-16.18.54:543][  0]LogMemory: Platform Memory Stats for Windows
+[2018.11.04-16.18.54:543][  0]LogMemory: Process Physical Memory: 100.56 MB used, 100.56 MB peak
+[2018.11.04-16.18.54:544][  0]LogMemory: Process Virtual Memory: 89.34 MB used, 89.34 MB peak
+[2018.11.04-16.18.54:544][  0]LogMemory: Physical Memory: 5246.53 MB used,  2865.12 MB free, 8111.65 MB total
+[2018.11.04-16.18.54:544][  0]LogMemory: Virtual Memory: 4638.56 MB used,  2865.12 MB free, 134217728.00 MB total
+[2018.11.04-16.18.54:580][  0]LogInit: Using OS detected language (en-GB).
+[2018.11.04-16.18.54:580][  0]LogInit: Using OS detected locale (en-GB).
+[2018.11.04-16.18.54:581][  0]LogTextLocalizationManager: No specific localization for 'en-GB' exists, so the 'en' localization will be used.
+[2018.11.04-16.18.55:088][  0]LogStreaming: Display: Took  0.508s to InitEngineTextLocalization.
+[2018.11.04-16.18.55:121][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2018.11.04-16.18.55:121][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2018.11.04-16.18.55:158][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2018.11.04-16.18.55:158][  0]LogD3D11RHI: D3D11 adapters:
+[2018.11.04-16.18.55:254][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GT 750M' (Feature Level 11_0)
+[2018.11.04-16.18.55:254][  0]LogD3D11RHI:       2009/0/4055 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2018.11.04-16.18.55:261][  0]LogD3D11RHI:    1. 'Intel(R) HD Graphics 4600' (Feature Level 11_0)
+[2018.11.04-16.18.55:261][  0]LogD3D11RHI:       112/0/2048 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x8086
+[2018.11.04-16.18.55:264][  0]LogD3D11RHI:    2. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.11.04-16.18.55:264][  0]LogD3D11RHI:       0/0/4055 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.11.04-16.18.55:266][  0]LogD3D11RHI:    3. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.11.04-16.18.55:266][  0]LogD3D11RHI:       0/0/4055 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.11.04-16.18.55:266][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2018.11.04-16.18.55:307][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2018.11.04-16.18.55:307][  0]LogD3D11RHI:     GPU DeviceId: 0xfe4 (for the marketing name, search the web for "GPU Device Id")
+[2018.11.04-16.18.55:307][  0]LogWindows: EnumDisplayDevices:
+[2018.11.04-16.18.55:307][  0]LogWindows:    0. 'Intel(R) HD Graphics 4600' (P:1 D:1)
+[2018.11.04-16.18.55:308][  0]LogWindows:    1. 'Intel(R) HD Graphics 4600' (P:0 D:0)
+[2018.11.04-16.18.55:308][  0]LogWindows:    2. 'Intel(R) HD Graphics 4600' (P:0 D:0)
+[2018.11.04-16.18.55:308][  0]LogWindows:    3. 'spacedesk Graphics Adapter' (P:0 D:0)
+[2018.11.04-16.18.55:309][  0]LogWindows:    4. 'spacedesk Graphics Adapter' (P:0 D:0)
+[2018.11.04-16.18.55:309][  0]LogWindows:    5. 'spacedesk Graphics Adapter' (P:0 D:0)
+[2018.11.04-16.18.55:309][  0]LogWindows: DebugString: PrimaryIsNotTheChoosenAdapter PrimaryIsNotTheChoosenAdapter PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter FoundDriverCount:0 
+[2018.11.04-16.18.55:309][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GT 750M
+[2018.11.04-16.18.55:309][  0]LogD3D11RHI:   Driver Version: Unknown (internal:Unknown, unified:Unknown)
+[2018.11.04-16.18.55:309][  0]LogD3D11RHI:      Driver Date: Unknown
+[2018.11.04-16.18.55:309][  0]LogRHI: Texture pool is 1406 MB (70% of 2009 MB)
+[2018.11.04-16.18.55:380][  0]LogD3D11RHI: Async texture creation enabled
+[2018.11.04-16.18.55:401][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2018.11.04-16.18.55:402][  0]LogShaderCompilers: Guid format shader working directory is -32 characters bigger than the processId version (../../../../../../Users/tonir/Desktop/UE4-Wiimote-Plugin-master/UE4WiiMoteTest/Intermediate/Shaders/WorkingDirectory/6700/).
+[2018.11.04-16.18.55:403][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/tonir/AppData/Local/Temp/UnrealShaderWorkingDir/7DFAB8274D63ED8D7A20F98B09002006/'.
+[2018.11.04-16.18.55:780][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2018.11.04-16.18.55:800][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2018.11.04-16.18.55:820][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2018.11.04-16.18.55:840][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2018.11.04-16.18.55:840][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2018.11.04-16.18.55:959][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2018.11.04-16.18.55:959][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2018.11.04-16.18.55:959][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2018.11.04-16.18.56:845][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2018.11.04-16.18.56:965][  0]LogDerivedDataCache: Loaded boot cache 0.12s 71MB C:/Users/tonir/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc.
+[2018.11.04-16.18.56:965][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/tonir/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc
+[2018.11.04-16.18.56:965][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/tonir/Desktop/UE4-Wiimote-Plugin-master/UE4WiiMoteTest/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2018.11.04-16.18.56:965][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2018.11.04-16.18.56:965][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/tonir/Desktop/UE4-Wiimote-Plugin-master/UE4WiiMoteTest/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2018.11.04-16.18.56:965][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2018.11.04-16.18.56:981][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2018.11.04-16.18.56:993][  0]LogDerivedDataCache: Using Local data cache path C:/Users/tonir/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2018.11.04-16.18.56:993][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2018.11.04-16.18.56:993][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2018.11.04-16.18.56:995][  0]LogMaterial: Verifying Global Shaders for PCD3D_ES2
+[2018.11.04-16.18.57:445][  0]LogShaderCompilers: Display: Shaders left to compile 582
+[2018.11.04-16.18.57:445][  0]LogShaderCompilers: Display: Shaders left to compile 581
+[2018.11.04-16.18.57:445][  0]LogShaderCompilers: Display: Shaders left to compile 580
+[2018.11.04-16.18.57:445][  0]LogShaderCompilers: Display: Shaders left to compile 579
+[2018.11.04-16.18.57:445][  0]LogShaderCompilers: Display: Shaders left to compile 578
+[2018.11.04-16.18.57:445][  0]LogSlate: Using FreeType 2.6.0
+[2018.11.04-16.18.57:446][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.11.04-16.18.57:508][  0]LogInit: Using OS detected language (en-GB).
+[2018.11.04-16.18.57:508][  0]LogInit: Using OS detected locale (en-GB).
+[2018.11.04-16.18.57:508][  0]LogTextLocalizationManager: No localization for 'en-GB' exists, so 'en' will be used for the language.
+[2018.11.04-16.18.57:508][  0]LogTextLocalizationManager: No localization for 'en-GB' exists, so 'en' will be used for the locale.

@@ -15,7 +15,7 @@ namespace UnrealBuildTool.Rules
 			get { return Path.GetFullPath(Path.Combine(ModulePath, "../../ThirdParty/")); }
 		}
 
-		public Wiimote(TargetInfo Target)
+		public Wiimote(ReadOnlyTargetRules Target) : base(Target)
 		{
 
             PublicIncludePaths.AddRange(
@@ -38,8 +38,9 @@ namespace UnrealBuildTool.Rules
 					"Core",
 					"CoreUObject",
 					"Engine",
-					"InputDevice",
+					"ApplicationCore", // Needed for UE 4.20
 					"InputCore",
+					"InputDevice"
 					// ... add other public dependencies that you statically link with here ...
 				}
                 );
@@ -50,7 +51,9 @@ namespace UnrealBuildTool.Rules
 					"Core",
 					"CoreUObject",
 					"Engine",
-					"InputDevice",
+					"ApplicationCore", // Needed for UE 4.20
+					"InputCore",
+					"InputDevice"
 					// ... add private dependencies that you statically link with here ...
 				}
 				);
@@ -62,12 +65,12 @@ namespace UnrealBuildTool.Rules
 				PrivateIncludePaths.Add(Path.Combine(ThirdPartyPath, "WiiUse/inc"));
 			}
 
-	        if (UEBuildConfiguration.bBuildEditor == true)
+	       /* if (UEBuildConfiguration.bBuildEditor == true)
             {
                 //@TODO: Needed for the triangulation code used for sprites (but only in editor mode)
                 //@TOOD: Try to move the code dependent on the triangulation code to the editor-only module
               //  PrivateDependencyModuleNames.AddRange(new string [] {"UnrealEd","ContentBrowser"});
-            }
+            }*/
 
             PublicDelayLoadDLLs.Add("wiiuse.dll");
         }
