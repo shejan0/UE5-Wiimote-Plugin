@@ -1,5 +1,5 @@
-#include "WiimotePrivatePCH.h"
 #include "WiimotePlugin.h"
+#include "WiimotePrivatePCH.h"
 
 IMPLEMENT_MODULE(FWiimotePlugin, Wiimote)
 

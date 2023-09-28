@@ -1,5 +1,5 @@
-#include "WiimotePrivatePCH.h"
 #include "WiimoteFunctionLibrary.h"
+#include "WiimotePrivatePCH.h"
 #include "WiimoteInputDevice.h"
 
 UWiimoteFunctionLibrary::UWiimoteFunctionLibrary(const FObjectInitializer& ObjectInitializer)
