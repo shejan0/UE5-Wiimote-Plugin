@@ -3,10 +3,13 @@
 #pragma once
 #include "WiimotePlugin.h"
 #include "InputDevice.h"
+#include <wiiuse.h>
 
 
 #define MAX_WIIMOTES            4
-#define MAX_NUM_WIIMOTE_BUTTONS 16
+#define MAX_NUM_WIIMOTE_BUTTONS 14
+#define MAX_IR_DOTS             4
+
 
 /**
  * SteamVR Head Mounted Display
@@ -35,20 +38,24 @@ public:
      */
     virtual void SetChannelValue(int32 ControllerId, FForceFeedbackChannelType ChannelType, float Value) override;
     virtual void SetChannelValues(int32 ControllerId, const FForceFeedbackValues& values) override;
+    virtual bool SupportsForceFeedback(int32 ControllerId) override { return true; }
+    virtual bool IsGamepadAttached() const override;
 
 
     bool AnyWiimoteConnected() const;
 
     void SetIREnabled(int32 ControllerId, bool IsEnabled);
+    void GetIRDots(int32 ControllerId, TArray<FVector2D>& OutResult_);
+    void GetIRResolution(int32 ControllerId, FVector2D& OutResult_);
     void SetMotionPlusEnabled(int32 ControllerId, bool IsEnabled);
     void SetMotionSensingEnabled(int32 ControllerId, bool IsEnabled);
     void SetRumbleEnabled(int32 ControllerId, bool IsEnabled);
+    void ScanWiimotes();
 
 private:
 
-
     /**
-    *   @brief Callback that handles an event.
+    *   @brief Callback that handles an event.O
     *
     *   @param wm       Pointer to a wiimote_t structure.
     *
@@ -85,9 +92,25 @@ private:
     *   This can happen if the POWER button is pressed, or
     *   if the connection is interrupted.
     */
-    void handle_disconnect(struct wiimote_t* wm, int id);
+    void handle_disconnect(wiimote* wm, int id);
+
+    void IREvents(struct wiimote_t* wm, int id);
+    bool CheckGravityIR(const FVector& _Gravity, int _DirectionX, int _DirectionY);
 
 private:
+
+  const float MaxTimeBetweenUpdatesIR = 4.f;
+  const float IROffset = 0.25f;
+  const float TimeBetweenPolls = 0.008f;
+
+	float PollTimer = 0.f;
+
+    const float ForceFeedbackThreshold = 0.3f;
+
+    TArray<bool> LastForceFeedbackValues;
+
+    float RepeatForceFeedbackTimer = 0.f;
+    const float RepeatForceFeedbackTime = 4.f;
 
     struct FControllerState
     {
@@ -103,7 +126,14 @@ private:
         short LeftYAnalog;
 
         /** Id of the controller */
-        int32 ControllerId;
+				int32 ControllerId;
+				float TimeBetweenUpdatesIR = 3.f;
+
+        // Values used when one of the IR points is lost
+        float LastIRDistance;
+        FVector2D LastIRDirection;
+				float LastAngle;
+				bool bIRWrongOrder = false;
 
         struct wiimote_t* Wiimote;
 

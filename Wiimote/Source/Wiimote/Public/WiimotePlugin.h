@@ -2,8 +2,10 @@
 
 #pragma once
 
-#include "ModuleManager.h"
+#include "Modules/ModuleManager.h"
 #include "IInputDeviceModule.h"
+
+class FWiimoteInputDevice;
 
 /**
  * The public interface to this module.  In most cases, this interface is only public to sibling modules 
@@ -13,6 +15,7 @@ class FWiimotePlugin : public IInputDeviceModule
 {
 public:
 	virtual TSharedPtr<class IInputDevice> CreateInputDevice(const TSharedRef<FGenericApplicationMessageHandler>& InMessageHandler) override;
+	virtual void StartupModule() override;
 	virtual void ShutdownModule();
 
 	FString GetModulePriorityKeyName() const
@@ -59,3 +62,5 @@ public:
 private:
 	TSharedPtr<class FWiimoteInputDevice> WiimoteDevice;
 };
+
+void* WiimoteHandle = nullptr;
