@@ -1,6 +1,10 @@
-# UE4-Wiimote-Plugin
+# UE5-Wiimote-Plugin
 
-Create a new project and copy the "Wiimote" folder into: "NewProject/Plugins/"
+Create a new project and copy the "Wiimote" folder into: "NewProject/Plugins/".
+
+Generate the Visual Studio Project files for your Unreal Project and Build Solution
+
+There is also a build in Releases if you want a build for Windows
 
 # How to use
 
