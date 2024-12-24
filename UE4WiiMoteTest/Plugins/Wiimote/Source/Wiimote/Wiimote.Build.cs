@@ -61,7 +61,12 @@ namespace UnrealBuildTool.Rules
 			if(Target.Platform == UnrealTargetPlatform.Win64)
 			{
 				PublicAdditionalLibraries.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64", "wiiuse.lib"));
-
+				foreach(string Library in PublicAdditionalLibraries)
+				{
+					Console.WriteLine(Library);
+				}
+				//PublicAdditionalLibraries.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64", "wiiuse.dll"));
+				//PublicRuntimeLibraryPaths.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64"));
 				PrivateIncludePaths.Add(Path.Combine(ThirdPartyPath, "WiiUse/inc"));
 			}
 
@@ -73,6 +78,7 @@ namespace UnrealBuildTool.Rules
             }*/
 
             PublicDelayLoadDLLs.Add("wiiuse.dll");
+            //PublicDelayLoadDLLs.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64", "wiiuse.dll"));
         }
 	}
 }
