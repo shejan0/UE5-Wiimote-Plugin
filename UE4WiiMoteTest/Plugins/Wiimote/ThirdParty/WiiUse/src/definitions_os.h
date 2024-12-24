@@ -26,6 +26,7 @@
  *
  */
 
+
 /**
  *	@file
  *	@brief Operating system related definitions.
@@ -39,15 +40,12 @@
 #define DEFINITIONS_OS_H_INCLUDED
 
 #ifdef _MSC_VER
-#include <float.h>
-#include <math.h>
-/* windows with old visual c doesn't have isXYZ macros */
-#ifndef isnan
-#define isnan(x) (_isnan(x))
-#endif
-#ifndef isinf
-#define isinf(x) (!_finite(x))
-#endif
+	#include <float.h>
+	/* windows with visual c */
+	#define isnan(x)		(_isnan(x))
+	#define isinf(x)		(!_finite(x))
+	/* disable warnings I don't care about */
+	/*#pragma warning(disable:4273)	*/	/* inconsistent dll linkage			*/
 #endif
 
 #endif /* DEFINITIONS_OS_H_INCLUDED */

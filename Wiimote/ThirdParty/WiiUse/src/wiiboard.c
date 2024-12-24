@@ -31,11 +31,11 @@
  *	@brief Wii Fit Balance Board device.
  */
 
-#include "wiiboard.h"
-#include "io.h"
 
-#include <stdio.h>  /* for printf */
-#include <string.h> /* for memset */
+#include "wiiboard.h"
+
+#include <stdio.h>                      /* for printf */
+#include <string.h>                     /* for memset */
 
 /**
  *	@brief Handle the handshake data from the wiiboard.
@@ -47,91 +47,73 @@
  *	@return	Returns 1 if handshake was successful, 0 if not.
  */
 
-int wii_board_handshake(struct wiimote_t *wm, struct wii_board_t *wb, byte *data, uint16_t len)
-{
-    byte *bufptr;
-
-    /*
-     * read calibration
-     */
-    wiiuse_read_data_sync(wm, 0, WM_EXP_MEM_CALIBR, EXP_HANDSHAKE_LEN, data);
-
-/* decode data */
+int wii_board_handshake(struct wiimote_t* wm, struct wii_board_t* wb, byte* data, uint16_t len) {
+	byte * bufptr;
+	/* decrypt data */
 #ifdef WITH_WIIUSE_DEBUG
-    {
-        int i;
-        printf("DECRYPTED DATA WIIBOARD\n");
-        for (i = 0; i < len; ++i)
-        {
-            if (i % 16 == 0)
-            {
-                if (i != 0)
-                {
-                    printf("\n");
-                }
+	int i;
+	printf("DECRYPTED DATA WIIBOARD\n");
+	for (i = 0; i < len; ++i) {
+		if (i % 16 == 0) {
+			if (i != 0) {
+				printf("\n");
+			}
 
-                printf("%X: ", 0x4a40000 + 32 + i);
-            }
-            printf("%02X ", data[i]);
-        }
-        printf("\n");
-    }
+			printf("%X: ", 0x4a40000 + 32 + i);
+		}
+		printf("%02X ", data[i]);
+	}
+	printf("\n");
 #endif
-    memset(wb, 0, sizeof(struct wii_board_t));
 
-    bufptr     = data + 4;
-    wb->ctr[0] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->cbr[0] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->ctl[0] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->cbl[0] = unbuffer_big_endian_uint16_t(&bufptr);
+	bufptr = data + 4;
+	wb->ctr[0] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->cbr[0] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->ctl[0] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->cbl[0] = unbuffer_big_endian_uint16_t(&bufptr);
 
-    wb->ctr[1] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->cbr[1] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->ctl[1] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->cbl[1] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->ctr[1] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->cbr[1] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->ctl[1] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->cbl[1] = unbuffer_big_endian_uint16_t(&bufptr);
 
-    wb->ctr[2] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->cbr[2] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->ctl[2] = unbuffer_big_endian_uint16_t(&bufptr);
-    wb->cbl[2] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->ctr[2] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->cbr[2] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->ctl[2] = unbuffer_big_endian_uint16_t(&bufptr);
+	wb->cbl[2] = unbuffer_big_endian_uint16_t(&bufptr);
 
-    wb->use_alternate_report = 0;
-
-    /* handshake done */
-    wm->event    = WIIUSE_WII_BOARD_CTRL_INSERTED;
-    wm->exp.type = EXP_WII_BOARD;
+	/* handshake done */
+	wm->event = WIIUSE_WII_BOARD_CTRL_INSERTED;
+	wm->exp.type = EXP_WII_BOARD;
 
 #ifdef WIIUSE_WIN32
-    wm->timeout = WIIMOTE_DEFAULT_TIMEOUT;
+	wm->timeout = WIIMOTE_DEFAULT_TIMEOUT;
 #endif
 
-    return 1;
+	return 1;
 }
+
 
 /**
  *	@brief The wii board disconnected.
  *
  *	@param cc		A pointer to a wii_board_t structure.
  */
-void wii_board_disconnected(struct wii_board_t *wb) { memset(wb, 0, sizeof(struct wii_board_t)); }
+void wii_board_disconnected(struct wii_board_t* wb) {
+	memset(wb, 0, sizeof(struct wii_board_t));
+}
 
-static float do_interpolate(uint16_t raw, uint16_t cal[3])
-{
+static float do_interpolate(uint16_t raw, uint16_t cal[3]) {
 #define WIIBOARD_MIDDLE_CALIB 17.0f
-    if (raw < cal[0])
-    {
-        return 0.0f;
-    } else if (raw < cal[1])
-    {
-        return ((float)(raw - cal[0]) * WIIBOARD_MIDDLE_CALIB) / (float)(cal[1] - cal[0]);
-    } else if (raw < cal[2])
-    {
-        return ((float)(raw - cal[1]) * WIIBOARD_MIDDLE_CALIB) / (float)(cal[2] - cal[1])
-               + WIIBOARD_MIDDLE_CALIB;
-    } else
-    {
-        return WIIBOARD_MIDDLE_CALIB * 2.0f;
-    }
+	if (raw < cal[0]) {
+		return 0.0f;
+	} else if (raw < cal[1]) {
+		return ((float)(raw - cal[0]) * WIIBOARD_MIDDLE_CALIB) / (float)(cal[1] - cal[0]);
+	} else if (raw < cal[2]) {
+		return ((float)(raw - cal[1]) * WIIBOARD_MIDDLE_CALIB) / (float)(cal[2] - cal[1]) + WIIBOARD_MIDDLE_CALIB;
+	} else {
+		return WIIBOARD_MIDDLE_CALIB * 2.0f;
+	}
 }
 
 /**
@@ -140,66 +122,25 @@ static float do_interpolate(uint16_t raw, uint16_t cal[3])
  *	@param wb		A pointer to a wii_board_t structure.
  *	@param msg		The message specified in the event packet.
  */
-void wii_board_event(struct wii_board_t *wb, byte *msg)
-{
-    byte *bufPtr = msg;
+void wii_board_event(struct wii_board_t* wb, byte* msg) {
+	byte * bufPtr = msg;
+	wb->rtr = unbuffer_big_endian_uint16_t(&bufPtr);
+	wb->rbr = unbuffer_big_endian_uint16_t(&bufPtr);
+	wb->rtl = unbuffer_big_endian_uint16_t(&bufPtr);
+	wb->rbl = unbuffer_big_endian_uint16_t(&bufPtr);
 
-    wb->rtr = unbuffer_big_endian_uint16_t(&bufPtr);
-    wb->rbr = unbuffer_big_endian_uint16_t(&bufPtr);
-    wb->rtl = unbuffer_big_endian_uint16_t(&bufPtr);
-    wb->rbl = unbuffer_big_endian_uint16_t(&bufPtr);
-
-    /*
-            Interpolate values
-            Calculations borrowed from wiili.org - No names to mention sadly :(
-       http://www.wiili.org/index.php/Wii_Balance_Board_PC_Drivers page however!
-    */
-    wb->tr = do_interpolate(wb->rtr, wb->ctr);
-    wb->tl = do_interpolate(wb->rtl, wb->ctl);
-    wb->br = do_interpolate(wb->rbr, wb->cbr);
-    wb->bl = do_interpolate(wb->rbl, wb->cbl);
+	/*
+		Interpolate values
+		Calculations borrowed from wiili.org - No names to mention sadly :( http://www.wiili.org/index.php/Wii_Balance_Board_PC_Drivers page however!
+	*/
+	wb->tr = do_interpolate(wb->rtr, wb->ctr);
+	wb->tl = do_interpolate(wb->rtl, wb->ctl);
+	wb->br = do_interpolate(wb->rbr, wb->cbr);
+	wb->bl = do_interpolate(wb->rbl, wb->cbl);
 }
 
 /**
-*   @brief Calib wii board
-* 
-*    @param wm      Pointer to a wiimote_t struct the calib values are used.
+	@todo not implemented!
 */
-void wiiuse_set_wii_board_calib(struct wiimote_t *wm)
-{
-    byte pkt[21];
-    uint16_t test = 1;
-    memset(pkt, 0, sizeof(pkt));
-
-    /*
-     * address in big endian first, the leading byte will
-     * be overwritten (only 3 bytes are sent)
-     */
-    to_big_endian_uint32_t(pkt, WM_EXP_MEM_CALIBR + 4);
-
-    pkt[0] = 0x04; //write register
-    pkt[4] = 0x0f; //size of data
-
-    to_big_endian_uint16_t(&pkt[5], wm->exp.wb.ctr[0]);
-    to_big_endian_uint16_t(&pkt[7], wm->exp.wb.cbr[0]);
-    to_big_endian_uint16_t(&pkt[9], wm->exp.wb.ctl[0]);
-    to_big_endian_uint16_t(&pkt[11], wm->exp.wb.cbl[0]);
-    to_big_endian_uint16_t(&pkt[13], wm->exp.wb.ctr[1]);
-    to_big_endian_uint16_t(&pkt[15], wm->exp.wb.cbr[1]);
-    to_big_endian_uint16_t(&pkt[17], wm->exp.wb.ctl[1]);
-    to_big_endian_uint16_t(&pkt[19], wm->exp.wb.cbl[1]);
-    if (wiiuse_send(wm, WM_CMD_WRITE_DATA, pkt, sizeof(pkt)) < 0)
-        return;
-    wiiuse_millisleep(100);
-
-    to_big_endian_uint32_t(pkt, WM_EXP_MEM_CALIBR + 20);
-    pkt[0] = 0x04; //write register
-    pkt[4] = 0x08; //size of data
-
-    to_big_endian_uint16_t(&pkt[5], wm->exp.wb.ctr[2]);
-    to_big_endian_uint16_t(&pkt[7], wm->exp.wb.cbr[2]);
-    to_big_endian_uint16_t(&pkt[9], wm->exp.wb.ctl[2]);
-    to_big_endian_uint16_t(&pkt[11], wm->exp.wb.cbl[2]);
-    wiiuse_send(wm, WM_CMD_WRITE_DATA, pkt, sizeof(pkt));
-    wiiuse_millisleep(100);
+void wiiuse_set_wii_board_calib(struct wiimote_t *wm) {
 }

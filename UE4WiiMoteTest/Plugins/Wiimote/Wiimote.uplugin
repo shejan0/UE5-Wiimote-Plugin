@@ -6,8 +6,8 @@
 	"VersionName" : "2.0",
 	"CreatedBy" : "xoyojank",
 	"CreatedByURL" : "http://blog.csdn.net/xoyojank",
-	"EngineVersion" : "5.3.0",
 	"Description" : "Experimental support for the Wiimote",
+	"EngineVersion" : "5.3.2",
 	"Category" : "NUI.Devices",
 	"EnabledByDefault" : false,
 	"IsBetaVersion" : true,
@@ -17,7 +17,8 @@
 		{
 			"Name" : "Wiimote",
 			"Type" : "Runtime",
-			"WhitelistPlatforms" : [ "Win64" ]
+			"WhitelistPlatforms" : [ "Win64" ],
+			"LoadingPhase": "Default"
 		}
 	]
 }

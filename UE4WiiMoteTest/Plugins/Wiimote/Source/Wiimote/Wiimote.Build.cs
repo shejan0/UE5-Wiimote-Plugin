@@ -20,27 +20,30 @@ namespace UnrealBuildTool.Rules
 
             PublicIncludePaths.AddRange(
                 new string[] {
-                    "Wiimote/Public"
+					PluginDirectory + "/Source/Wiimote/Public"
 					// ... add public include paths required here ...
 				}
                 );
 
 			PrivateIncludePaths.AddRange(
 				new string[] {
-					"Wiimote/Private",
+					PluginDirectory + "/Source/Wiimote/Private",
 					// ... add other private include paths required here ...
 				}
 				);
 
             PublicDependencyModuleNames.AddRange(
                 new string[]
-				{
-					"Core",
+                {
+                    "Core",
 					"CoreUObject",
 					"Engine",
-					"ApplicationCore", // Needed for UE 4.20
+                    "Projects",
+                    "ApplicationCore", // Needed for UE 4.20
 					"InputCore",
-					"InputDevice"
+                    "InputDevice",
+					"SlateCore",
+                    "Slate"
 					// ... add other public dependencies that you statically link with here ...
 				}
                 );
@@ -51,9 +54,12 @@ namespace UnrealBuildTool.Rules
 					"Core",
 					"CoreUObject",
 					"Engine",
-					"ApplicationCore", // Needed for UE 4.20
+                    "Projects",
+                    "ApplicationCore", // Needed for UE 4.20
 					"InputCore",
-					"InputDevice"
+					"InputDevice",
+                    "SlateCore",
+                    "Slate"
 					// ... add private dependencies that you statically link with here ...
 				}
 				);
@@ -61,12 +67,7 @@ namespace UnrealBuildTool.Rules
 			if(Target.Platform == UnrealTargetPlatform.Win64)
 			{
 				PublicAdditionalLibraries.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64", "wiiuse.lib"));
-				foreach(string Library in PublicAdditionalLibraries)
-				{
-					Console.WriteLine(Library);
-				}
-				//PublicAdditionalLibraries.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64", "wiiuse.dll"));
-				//PublicRuntimeLibraryPaths.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64"));
+
 				PrivateIncludePaths.Add(Path.Combine(ThirdPartyPath, "WiiUse/inc"));
 			}
 
@@ -76,9 +77,9 @@ namespace UnrealBuildTool.Rules
                 //@TOOD: Try to move the code dependent on the triangulation code to the editor-only module
               //  PrivateDependencyModuleNames.AddRange(new string [] {"UnrealEd","ContentBrowser"});
             }*/
-
             PublicDelayLoadDLLs.Add("wiiuse.dll");
-            //PublicDelayLoadDLLs.Add(Path.Combine(ThirdPartyPath, "WiiUse/lib/Win64", "wiiuse.dll"));
+            RuntimeDependencies.Add(ThirdPartyPath  + "/WiiUse/lib/Win64/wiiuse.dll");
+
         }
-	}
+    }
 }
