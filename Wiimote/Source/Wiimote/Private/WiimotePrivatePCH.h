@@ -4,8 +4,6 @@
 
 #include "Engine.h"
 #include "IInputDeviceModule.h"
-#include "WiimoteInputDevice.h"
-
 
 #ifdef _MSC_VER
 #pragma warning(push)
