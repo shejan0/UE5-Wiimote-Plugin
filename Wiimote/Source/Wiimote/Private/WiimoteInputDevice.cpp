@@ -466,9 +466,9 @@ void FWiimoteInputDevice::SetIREnabled(int32 ControllerId, bool IsEnabled)
     if (IsEnabled)
     {
         wiiuse_set_ir(GWiimotes[ControllerId], 1);
-        SetAspectRatio(controllerId,FAspectRatios::IR16_9);
-        SetIRPosition(controllerId, FIRPosition::IRAbove);
-        SetIRSensitivity(controllerId,5);
+        SetAspectRatio(ControllerId,FAspectRatios::IR16_9);
+        SetIRPosition(ControllerId, FIRPosition::IRAbove);
+        SetIRSensitivity(ControllerId,5);
     }
     else
     {
@@ -479,13 +479,13 @@ void FWiimoteInputDevice::SetIREnabled(int32 ControllerId, bool IsEnabled)
 void FWiimoteInputDevice::SetAspectRatio(int32 ControllerId, FAspectRatios aspectRatio){
     if (GWiimotes[ControllerId] == nullptr)
         return;
-    wiiuse_set_aspect_ratio(GWiimotes[ControllerId], aspectRatio);
+    wiiuse_set_aspect_ratio(GWiimotes[ControllerId], (aspect_t)aspectRatio);
 }
 
 void FWiimoteInputDevice::SetIRPosition(int32 ControllerId, FIRPosition irPosition){
     if (GWiimotes[ControllerId] == nullptr)
         return;
-    wiiuse_set_ir_position(GWiimotes[ControllerId], irPosition);
+    wiiuse_set_ir_position(GWiimotes[ControllerId], (ir_position_t)irPosition);
 }
 
 void FWiimoteInputDevice::SetIRSensitivity(int32 ControllerId, int32 sensitivity){
