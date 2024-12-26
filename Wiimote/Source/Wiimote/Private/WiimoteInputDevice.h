@@ -21,6 +21,18 @@ class FWiimoteInputDevice : public IInputDevice, public TSharedFromThis<FWiimote
 public:
     ~FWiimoteInputDevice();
 
+    UENUM()
+      enum FAspectRatios {
+      IR16_9 = aspect_t::WIIUSE_ASPECT_16_9,
+      IR4_3 = aspect_t::WIIUSE_ASPECT_4_3
+    };
+
+    UENUM()
+      enum FIRPosition {
+      IRAbove = ir_position_t::WIIUSE_IR_ABOVE,
+      IRBelow = ir_position_t::WIIUSE_IR_BELOW
+    };
+
     /** Tick the interface (e.g. check for new controllers) */
     virtual void Tick(float DeltaTime) override;
 
@@ -45,6 +57,12 @@ public:
     bool AnyWiimoteConnected() const;
 
     void SetIREnabled(int32 ControllerId, bool IsEnabled);
+    void SetAspectRatio(int32 ControllerId, FAspectRatios aspectRatio);
+    void SetIRPosition(int32 ControllerId, FIRPosition irPosition);
+    void SetIRSensitivity(int32 ControllerId, int32 sensitivity);
+    //void GetAspectRatio(int32 ControllerId, FAspectRatio& OutResult_);
+    //void GetIRPosition(int32 ControllerId, FIRPosition& OutResult_);
+    //void GetIRSensitivity(int32 ControllerId, int32& OutResult_);
     void GetIRDots(int32 ControllerId, TArray<FVector2D>& OutResult_);
     void GetIRResolution(int32 ControllerId, FVector2D& OutResult_);
     void SetMotionPlusEnabled(int32 ControllerId, bool IsEnabled);
@@ -96,6 +114,7 @@ private:
 
     void IREvents(struct wiimote_t* wm, int id);
     bool CheckGravityIR(const FVector& _Gravity, int _DirectionX, int _DirectionY);
+    
 
 private:
 

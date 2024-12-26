@@ -465,15 +465,33 @@ void FWiimoteInputDevice::SetIREnabled(int32 ControllerId, bool IsEnabled)
         return;
     if (IsEnabled)
     {
-			wiiuse_set_ir(GWiimotes[ControllerId], 1);
-      wiiuse_set_aspect_ratio(GWiimotes[ControllerId], aspect_t::WIIUSE_ASPECT_16_9);
-      wiiuse_set_ir_position(GWiimotes[ControllerId], ir_position_t::WIIUSE_IR_ABOVE);
-      wiiuse_set_ir_sensitivity(GWiimotes[ControllerId], 3);
+        wiiuse_set_ir(GWiimotes[ControllerId], 1);
+        SetAspectRatio(controllerId,FAspectRatios::IR16_9);
+        SetIRPosition(controllerId, FIRPosition::IRAbove);
+        SetIRSensitivity(controllerId,5);
     }
     else
     {
         wiiuse_set_ir(GWiimotes[ControllerId], 0);
     }
+}
+
+void FWiimoteInputDevice::SetAspectRatio(int32 ControllerId, FAspectRatios aspectRatio){
+    if (GWiimotes[ControllerId] == nullptr)
+        return;
+    wiiuse_set_aspect_ratio(GWiimotes[ControllerId], aspectRatio);
+}
+
+void FWiimoteInputDevice::SetIRPosition(int32 ControllerId, FIRPosition irPosition){
+    if (GWiimotes[ControllerId] == nullptr)
+        return;
+    wiiuse_set_ir_position(GWiimotes[ControllerId], irPosition);
+}
+
+void FWiimoteInputDevice::SetIRSensitivity(int32 ControllerId, int32 sensitivity){
+    if (GWiimotes[ControllerId] == nullptr)
+        return;
+    wiiuse_set_ir_sensitivity(GWiimotes[ControllerId], sensitivity);
 }
 
 
@@ -610,9 +628,9 @@ void FWiimoteInputDevice::ScanWiimotes()
 	*   to tell which wiimotes are connected (just like the wii does).
 	*/
 	wiiuse_set_leds(GWiimotes[0], WIIMOTE_LED_1);
-	//wiiuse_set_leds(GWiimotes[1], WIIMOTE_LED_2);
-	//wiiuse_set_leds(GWiimotes[2], WIIMOTE_LED_3);
-	//wiiuse_set_leds(GWiimotes[3], WIIMOTE_LED_4);
+	wiiuse_set_leds(GWiimotes[1], WIIMOTE_LED_2);
+	wiiuse_set_leds(GWiimotes[2], WIIMOTE_LED_3);
+	wiiuse_set_leds(GWiimotes[3], WIIMOTE_LED_4);
 
     wiiuse_set_timeout(GWiimotes, MAX_WIIMOTES, 1, 1);
 	SetIREnabled(0, true);
