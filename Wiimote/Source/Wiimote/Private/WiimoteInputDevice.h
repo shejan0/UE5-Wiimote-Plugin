@@ -60,11 +60,8 @@ public:
     void SetAspectRatio(int32 ControllerId, FAspectRatios aspectRatio);
     void SetIRPosition(int32 ControllerId, FIRPosition irPosition);
     void SetIRSensitivity(int32 ControllerId, int32 sensitivity);
-    //void GetAspectRatio(int32 ControllerId, FAspectRatio& OutResult_);
-    //void GetIRPosition(int32 ControllerId, FIRPosition& OutResult_);
-    //void GetIRSensitivity(int32 ControllerId, int32& OutResult_);
-    void GetIRDots(int32 ControllerId, TArray<FVector2D>& OutResult_);
-    void GetIRResolution(int32 ControllerId, FVector2D& OutResult_);
+    void GetAspectRatio(int32 ControllerId, FAspectRatio& OutResult_);
+    void GetIRPosition(int32 ControllerId, FIRPosition& OutResult_);
     void SetMotionPlusEnabled(int32 ControllerId, bool IsEnabled);
     void SetMotionSensingEnabled(int32 ControllerId, bool IsEnabled);
     void SetRumbleEnabled(int32 ControllerId, bool IsEnabled);

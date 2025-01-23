@@ -481,7 +481,16 @@ void FWiimoteInputDevice::SetAspectRatio(int32 ControllerId, FAspectRatios aspec
         return;
     wiiuse_set_aspect_ratio(GWiimotes[ControllerId], (aspect_t)aspectRatio);
 }
-
+void FWiimoteInputDevice::GetAspectRatio(int32 ControllerId, FAspectRatio& OutResult_){
+    if (GWiimotes[ControllerId] == nullptr)
+        return;
+        OutResult_ = GWiimotes[ControllerId]->ir.aspect;
+}
+void FWiimoteInputDevice::GetIRPosition(int32 ControllerId, FIRPosition& OutResult_){
+    if (GWiimotes[ControllerId] == nullptr)
+        return;
+        OutResult_ = GWiimotes[ControllerId]->ir.pos;
+}
 void FWiimoteInputDevice::SetIRPosition(int32 ControllerId, FIRPosition irPosition){
     if (GWiimotes[ControllerId] == nullptr)
         return;
